@@ -1,0 +1,25 @@
+version: '3.7'
+x-logging:
+  &default-logging
+  options:
+    max-size: '12m'
+    max-file: '5'
+  driver: json-file
+
+services:
+  flutter:
+    container_name: flutter
+    build:
+      context: .
+      args:
+        - ubuntu_version=${UBUNTU_VERSION}
+        - timezone=${TIMEZONE}
+        - web_server_port=${WEB_SERVER_PORT}
+        - app_code_path_container=${APP_CODE_PATH_CONTAINER}
+    tty: true
+    env_file: .env
+    volumes:
+      - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}${APP_CODE_CONTAINER_FLAG}
+    logging: *default-logging
+    ports:
+      - "$WEB_SERVER_PORT:$WEB_SERVER_PORT"

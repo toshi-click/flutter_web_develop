@@ -1,0 +1,14 @@
+# ルートの設定（.editorconfigはプロジェクトのルートに置くと良いです）
+root = true
+# 改行コードと改行後ろの空白削除の有無を指定したい。文字コードも。
+[*]
+# インデントスタイル
+indent_style = space
+
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
