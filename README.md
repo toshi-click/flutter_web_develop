@@ -28,7 +28,7 @@ Flutterのweb版での環境構築です。
     ```
     flutter run -d web-server --web-port=${WEB_SERVER_PORT} --web-hostname 0.0.0.0
     ```
-   下記が表示されたらhttp://localhost:8888にアクセスすればOK
+   下記が表示されたら [http://localhost:8888](http://localhost:8888) にアクセスすればOK
     ```shell
     To hot restart changes while running, press "r" or "R".
     For a more detailed help message, press "h". To quit, press "q".
